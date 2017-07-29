@@ -1,0 +1,73 @@
+body {
+	font: 1.5vmin Calibri;
+	background-color: #000000;
+	color: #23adff;
+	fill: #FFFFFF;
+}
+#title {
+	font-size: 5vmin;
+	margin: 0;
+	fill: #23adff;
+	font-weight: bold;
+}
+.info {
+	font-size: 3vmin;
+	color: #FFFFFF;
+}
+#legendTitle {
+	position: absolute;
+	font-size: 3.5vmin;
+	color: #FFFFFF;
+	font-weight: bold;
+	top: 5vh;
+	left: 88vw;
+}
+.axis text {
+	font-size: 2vmin;
+}
+.axis path, .axis line {
+	fill: none;
+	stroke: #FFFFFF;
+	shape-rendering: crispEdges;
+}
+h2, h3, p {
+	display: inline-block;
+}
+.tooltip {
+	position: absolute;
+	pointer-events: none;
+}
+#tooltip {
+	background-color: #000000;
+	border-radius: 10px;
+	border: 3px solid #000000;
+}
+.result {
+	color: #FFFFFF;
+}
+.resultDiv {
+	background-color: black;
+	height:30px;
+	margin: 2px;
+	display: flex;
+	align-items: center;
+}
+#player {
+	font-size: 3vmin;
+}
+div.hand_buttons {
+	position: absolute;
+        top: 10vh;
+        left: 90vw;
+      }
+div.hand_buttons div {
+	font-size: 3vmin;
+        padding: 3px;
+        margin: 10px;
+	border-radius: 2px;
+	color: #000000;
+	text-align: center;
+      }
+div.hand_buttons div:hover {
+	cursor: pointer;
+}
