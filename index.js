@@ -182,7 +182,7 @@ function draw(data){
 		})
 		
 		var circles = svg.selectAll("circle")
-		.data(filtered, function(d) {return d.id;});
+		.data(filtered, function(d) {return d.name;});
 		
 		// fade out & remove previous unrelated data
 		circles.exit()
