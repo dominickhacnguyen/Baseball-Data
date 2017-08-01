@@ -1,7 +1,7 @@
 # Summary
 A CSV dataset of baseball players and their characteristics and statistics was parsed and an interactive data visualization was created using common web development languages (HTML5, CSS3, JavasScript) and the D3 library. The focus of this visualization was handedness of the player.
 # Data Cleaning
-We cleaned the original dataset of 1157 baseball players (stored in baseball_data.csv) by removing any players that did not score a homerun or have a batting average. To expedite the cleaning process, these players were removed directly with Excel. This new dataset contains 871 players and is stored in baseball_data2.csv.
+We cleaned the original dataset of 1157 baseball players (stored in *baseball_data.csv*) by removing any players that did not score a homerun or have a batting average. To expedite the cleaning process, these players were removed directly with Excel. This new dataset contains 871 players and is stored in *baseball_data2.csv*.
 # Design
 ## Visual Encoding
 The most important fields, the two performance indicators (batting avg and home runs hit), are encoded by x position and y position respectively. Since handedness is the variable that we wish to show a difference in, we encoded this through color for easy comparison. Additionally, we made this variable interactive by allowing the user to sort the data by handedness through interacting with the buttons on the right side. Clicking on these buttons highlights visual elements that pertain to that hand type.
@@ -13,7 +13,7 @@ After some feedback, we also added a ‘summary statistics’ portion for quick 
 The visualization was updated based on collected feedback. Version 1.0 represents the visualization before the feedback and Version 2.0 represents the visualization after the feedback. 
 Please note, only Version 2.0 can be seen in the browser via the link: https://dominickhacnguyen.github.io/baseball-data/. Version 1.0 can be viewed by downloading it separately and viewing it locally. 
 Below is the feedback that was collected:
--	Brother noticed that there were two circles that would show up green (left handed) even though the red (right handed) button was selected. Refer to Version1.0_Issue.jpg.
+-	Brother noticed that there were two circles that would show up green (left handed) even though the red (right handed) button was selected. Refer to *Version1.0_Issue.jpg*.
 > - To resolve this, we went back to the csv file and found out that there were duplicates in the name field. 
 > -	Initially, we had assumed that the ‘name’ field was unique and bound the filtered data to the data circles with the name field in the ‘key’ function. However, upon further analysis of the data in Excel, we found two data points that had the same name to another data point. 
 > -	Thus, to rectify this, we added an ‘id’ field and put a unique value for each record.
