@@ -193,10 +193,6 @@ function draw(data) {
 		// Filter data by handedness
 		var filtered = filterByHand(data, category);
 		
-//		function key_function(){
-//			function(d) {return d.id;};
-//		}
-		
 		var circles = svg.selectAll("circle")
 		.data(filtered, function (d) {return d.id; });
 		
