@@ -9,10 +9,27 @@ body {
 	margin: 0;
 	fill: #23adff;
 	font-weight: bold;
+	position: absolute;
+	top: 5vh;
+	left: 5vw;
+}
+svg {
+	position: absolute;
+	top: 5vh;
+	left: 2vw;
 }
 .info {
+	position: absolute;
 	font-size: 3vmin;
 	color: #FFFFFF;
+}
+#info1 {
+	top: 10vh;
+	left: 5vw;
+}
+#info2 {
+	top: 14vh;
+	left: 5vw;
 }
 #legendTitle {
 	position: absolute;
@@ -70,4 +87,30 @@ div.hand_buttons div {
       }
 div.hand_buttons div:hover {
 	cursor: pointer;
+}
+
+.summaryChart {
+	color: #FFFFFF;
+}
+h1 {
+	font-size: 1.5vw;
+}
+.bar {
+	font-size: 2vmin;
+	text-align: right;
+	padding-right: 1vmin;
+	margin: 5px;
+	color: #000000;
+	font-weight: bold;
+}
+
+#battingAvgSummary {
+	position: absolute;
+	top: 25vh;
+	left: 6vw;
+}
+#hrAvgSummary {
+	position: absolute;
+	top: 25vh;
+	left: 26vw;
 }
