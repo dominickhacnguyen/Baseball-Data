@@ -6,6 +6,7 @@ We cleaned the original dataset of 1157 baseball players (stored in *baseball_da
 While the user can interact with the visualization, there are two key takeaways that we wanted to clearly illustrate through the bar charts:
 - On average, left-handed players have slightly better batting average than right-handed and ambidextrous players (0.253 vs 0.240 and 0.244 respectively).
 - On average, left-handed players hit more HRs than right-handed and ambidextrous players (69.9 vs 58.8 and 40.3 respectively).
+
 To help quantify this difference, we used a two-sample independent t-test. At a 90% confidence level, all of these performance differences are statistically significant. More statistical details can be found in the *baseball_data.xlsx* file.
 # Design
 ## Visual Encoding
