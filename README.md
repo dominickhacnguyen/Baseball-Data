@@ -1,7 +1,12 @@
 # Summary
-A CSV dataset of baseball players and their characteristics and statistics was parsed and an interactive data visualization was created using common web development languages (HTML5, CSS3, JavasScript) and the D3 library. The focus of this visualization was handedness of the player.
+A CSV dataset of baseball players and their characteristics and statistics was parsed and an interactive data visualization was created using common web development languages (HTML5, CSS3, JavasScript) and the D3 library. The focus of this visualization was handedness of the player on batting average and amount of home runs hit (HRs).
 # Data Cleaning
 We cleaned the original dataset of 1157 baseball players (stored in *baseball_data.csv*) by removing any players that did not score a homerun or have a batting average. To expedite the cleaning process, these players were removed directly with Excel. This new dataset contains 871 players and is stored in *baseball_data2.csv*.
+# Explanatory Outcomes
+While the user can interact with the visualization, there are two key takeaways that we wanted to clearly illustrate through the bar charts:
+- On average, left-handed players have slightly better batting average than right-handed and ambidextrous players (0.253 vs 0.240 and 0.244 respectively).
+- On average, left-handed players hit more HRs than right-handed and ambidextrous players (69.9 vs 58.8 and 40.3 respectively).
+To help quantify this difference, we used a two-sample independent t-test. At a 90% confidence level, all of these performance differences are statistically significant. More statistical details can be found in the *baseball_data.xlsx* file.
 # Design
 ## Visual Encoding
 The most important fields, the two performance indicators (batting avg and home runs hit), are encoded by x position and y position respectively. Since handedness is the variable that we wish to show a difference in, we encoded this through color for easy comparison. Additionally, we made this variable interactive by allowing the user to sort the data by handedness through interacting with the buttons on the right side. Clicking on these buttons highlights visual elements that pertain to that hand type.
@@ -26,3 +31,4 @@ Below is the feedback that was collected:
 - http://bl.ocks.org/d3noob/5d621a60e2d1d02086bf
 - http://bl.ocks.org/weiglemc/6185069 
 - https://bl.ocks.org/mbostock/7322386 
+- https://www.medcalc.org/calc/comparison_of_means.php 
