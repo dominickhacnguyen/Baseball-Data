@@ -23,12 +23,8 @@ svg {
 	font-size: 3vmin;
 	color: #FFFFFF;
 }
-#info1 {
-	top: 10vh;
-	left: 5vw;
-}
-#info2 {
-	top: 14vh;
+#subtext {
+	top: 12vh;
 	left: 5vw;
 }
 #legendTitle {
@@ -46,6 +42,11 @@ svg {
 	fill: none;
 	stroke: #FFFFFF;
 	shape-rendering: crispEdges;
+}
+#result {
+	top: 47vh;
+	left: 5vw;
+	width: 40vw;
 }
 h2, h3, p {
 	display: inline-block;
@@ -106,11 +107,20 @@ h1 {
 
 #battingAvgSummary {
 	position: absolute;
-	top: 25vh;
+	top: 22vh;
 	left: 6vw;
 }
 #hrAvgSummary {
 	position: absolute;
-	top: 25vh;
+	top: 22vh;
 	left: 26vw;
+}
+.red {
+	color: #f44242;
+}
+.green {
+	color: #42f480;
+}
+.blue {
+	color: #23adff;
 }

@@ -1,5 +1,6 @@
 // function to filter data by handedness
 function filterByHand(data, hand) {
+	"use strict";
 	var filtered = data.filter(function (d) {
 		if (hand === null) {
 			return true;
@@ -11,6 +12,7 @@ function filterByHand(data, hand) {
 
 // function to convert handoptions text to handedness field values
 function convertCategory(category) {
+	"use strict";
 	switch (category) {
 		case "Both":
 			return "B";
@@ -26,29 +28,29 @@ function convertCategory(category) {
 // function to draw scatter plot and labels
 function draw(data) {
 	"use strict";
-	var margin = {top: 20, right: 20, bottom: 20, left: 40},
-	    buffer = 75,
-	    chartWidth = window.innerWidth,
-	    chartHeight = window.innerHeight,
-	    width = chartWidth - margin.left - margin.right - buffer,
-	    height = chartHeight - margin.top - margin.bottom - buffer;
+	var margin = {top: 20, right: 20, bottom: 20, left: 20};
+	var buffer = 50;
+	var chartWidth = window.innerWidth;
+	var chartHeight = window.innerHeight;
+	var width = chartWidth - margin.left - margin.right - buffer;
+	var height = chartHeight - margin.top - margin.bottom - buffer;
 
 	// setup x (batting avg)
-	var xValue = function (d) { return d.avg; },
-	    xScale = d3.scale.linear().range([0, width]),
-	    xMap = function(d) { return xScale(xValue(d)); },
-	    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+	var xValue = function (d) { return d.avg; };
+	var xScale = d3.scale.linear().range([0, width]);
+	var xMap = function (d) { return xScale(xValue(d)); };
+	var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 	// setup y (home runs)
-	var yValue = function (d) { return d.HR; },
-	    yScale = d3.scale.linear().range([height, 0]),
-	    yMap = function (d) { return yScale(yValue(d)); },
-	    yAxis = d3.svg.axis().scale(yScale).orient("left");
+	var yValue = function (d) { return d.HR; };
+	var yScale = d3.scale.linear().range([height, 0]);
+	var yMap = function (d) { return yScale(yValue(d)); };
+	var yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 	// setup fill color
 	var handOptions = ["Both", "Left", "Right", "All"];
 	var cValue = function (d) { return d.handedness; };
-	var colors =["#23adff", '#42f480', "#f44242", "#ffbb2b"]
+	var colors = ["#23adff", '#42f480', "#f44242", "#ffbb2b"];
 	var color = d3.scale.ordinal().domain(["B", "L", "R", ""]);
 	color.range(colors);
 
@@ -56,8 +58,8 @@ function draw(data) {
 	var svg = d3.select("body").append("svg");
 	svg.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
-		.append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		.append("g");
+//		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	// add the tooltip area to the webpage
 	var tooltip = d3.select("body").append("div");
@@ -68,11 +70,11 @@ function draw(data) {
 	function inBounds(value, axis) {
 		if (axis === "height" && value < 100) {
 			return value + 150;
-		} else if (axis === "width" && value > width - 100) {
-			return value - 125;
-		} else {
-			return value;
 		}
+		if (axis === "width" && value > width - 100) {
+			return value - 125;
+		}
+		return value;
 	}
 
 	// change string (from CSV) into number format
@@ -112,24 +114,6 @@ function draw(data) {
 		.style("text-anchor", "end")
 		.text("# of Home Runs");
 	
-	// draw header title
-	d3.select("body")
-		.append("h1")
-		.text("Baseball Data")
-		.attr("id", "title");
-	
-	// draw info text
-	d3.select("body")
-		.append("h1")
-		.text("Does handedness have an effect on a baseball player's performance?")
-		.attr("class", "info")
-		.attr("id", "info1");
-	d3.select("body")
-		.append("h1")
-		.text("Click on a player to see more stats!")
-		.attr("class", "info")
-		.attr("id", "info2");
-	
 	// draw legend title
 	d3.select("body").append("text").text("Handedness")
 		.attr("id", "legendTitle")
@@ -146,7 +130,6 @@ function draw(data) {
 		.enter()
 		.append("div")
 		.attr("class", "hand_button")
-//		.attr("id", function (d) {return d.handedness; } + "Category")
 		.style("background-color", color)
 		.text(function (d) { return d; });
 	
@@ -194,7 +177,7 @@ function draw(data) {
 		var filtered = filterByHand(data, category);
 		
 		var circles = svg.selectAll("circle")
-		.data(filtered, function (d) {return d.id; });
+			.data(filtered, function (d) {return d.id; });
 		
 		// fade out & remove previous unrelated data
 		circles.exit()
@@ -296,7 +279,6 @@ function draw(data) {
 
 // function to draw summary area
 function drawSummary(data, colors, handOptions) {
-	
 	// get filtered data by handedness
 	var filtered_both = filterByHand(data, convertCategory(handOptions[0]));
 	var filtered_left = filterByHand(data, convertCategory(handOptions[1]));
@@ -312,9 +294,9 @@ function drawSummary(data, colors, handOptions) {
 	}
 	
 	// average filtered batting avg data
-	var both_batting_avg = parseFloat(d3.mean(filtered_both, function(d) { return d.avg}).toFixed(3));
-	var left_batting_avg = parseFloat(d3.mean(filtered_left, function(d) { return d.avg}).toFixed(3));
-	var right_batting_avg = parseFloat(d3.mean(filtered_right, function(d) { return d.avg}).toFixed(3));
+	var both_batting_avg = parseFloat(d3.mean(filtered_both, function(d) { return d.avg; }).toFixed(3));
+	var left_batting_avg = parseFloat(d3.mean(filtered_left, function(d) { return d.avg; }).toFixed(3));
+	var right_batting_avg = parseFloat(d3.mean(filtered_right, function(d) { return d.avg; }).toFixed(3));
 	var batting_avg_list = [both_batting_avg, left_batting_avg, right_batting_avg];
 	var avg_batting_avg = parseFloat(average(batting_avg_list).toFixed(3));
 	batting_avg_list.push(avg_batting_avg);
@@ -327,9 +309,9 @@ function drawSummary(data, colors, handOptions) {
 	];
 	
 	// average filtered home run data
-	var both_hr = parseFloat(d3.mean(filtered_both, function(d) { return d.HR}).toFixed(1));
-	var left_hr = parseFloat(d3.mean(filtered_left, function(d) { return d.HR}).toFixed(1));
-	var right_hr = parseFloat(d3.mean(filtered_right, function(d) { return d.HR}).toFixed(1));
+	var both_hr = parseFloat(d3.mean(filtered_both, function(d) { return d.HR; }).toFixed(1));
+	var left_hr = parseFloat(d3.mean(filtered_left, function(d) { return d.HR; }).toFixed(1));
+	var right_hr = parseFloat(d3.mean(filtered_right, function(d) { return d.HR; }).toFixed(1));
 	var hr_list = [both_hr, left_hr, right_hr];
 	var avg_hr = parseFloat(average(hr_list).toFixed(1));
 	hr_list.push(avg_hr);
@@ -343,15 +325,15 @@ function drawSummary(data, colors, handOptions) {
 	
 	// scale data to x position
 	var x_avg = d3.scale.linear()
-	.domain([0, d3.max(batting_avg_list)])
-	.range([0, 5]);
+		.domain([0, d3.max(batting_avg_list)])
+		.range([0, 5]);
 	
 	var x_hr = d3.scale.linear()
-	.domain([0, d3.max(hr_list)])
-	.range([0, 5]);
+		.domain([0, d3.max(hr_list)])
+		.range([0, 5]);
 	
 	// append batting avg summary to body
-	batting_avg_summary = d3.select("body")
+	var batting_avg_summary = d3.select("body")
 		.append("div")
 		.attr("class", "summaryChart")
 		.attr("id", "battingAvgSummary")
@@ -373,7 +355,7 @@ function drawSummary(data, colors, handOptions) {
 		
 	
 	// append home run summary to body
-	hr_summary = d3.select("body")
+	var hr_summary = d3.select("body")
 		.append("div")
 		.attr("class", "summaryChart")
 		.attr("id", "hrAvgSummary")
