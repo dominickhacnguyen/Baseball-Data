@@ -11,25 +11,21 @@ body {
 	font-weight: bold;
 	position: absolute;
 	top: 5vh;
-	left: 5vw;
+	left: 7vw;
 }
 svg {
 	position: absolute;
 	top: 5vh;
-	left: 2vw;
+	left: 1vw;
 }
 .info {
 	position: absolute;
 	font-size: 3vmin;
 	color: #FFFFFF;
 }
-#info1 {
-	top: 10vh;
-	left: 5vw;
-}
-#info2 {
-	top: 14vh;
-	left: 5vw;
+#subtext {
+	top: 12vh;
+	left: 7vw;
 }
 #legendTitle {
 	position: absolute;
@@ -46,6 +42,11 @@ svg {
 	fill: none;
 	stroke: #FFFFFF;
 	shape-rendering: crispEdges;
+}
+#outcome {
+	top: 47vh;
+	left: 7vw;
+	width: 40vw;
 }
 h2, h3, p {
 	display: inline-block;
@@ -88,7 +89,6 @@ div.hand_buttons div {
 div.hand_buttons div:hover {
 	cursor: pointer;
 }
-
 .summaryChart {
 	color: #FFFFFF;
 }
@@ -106,11 +106,20 @@ h1 {
 
 #battingAvgSummary {
 	position: absolute;
-	top: 25vh;
-	left: 6vw;
+	top: 22vh;
+	left: 8vw;
 }
 #hrAvgSummary {
 	position: absolute;
-	top: 25vh;
+	top: 22vh;
 	left: 26vw;
+}
+.red {
+	color: #f44242;
+}
+.green {
+	color: #42f480;
+}
+.blue {
+	color: #23adff;
 }

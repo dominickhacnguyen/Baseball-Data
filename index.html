@@ -3,10 +3,26 @@
 	<head>
 		<meta charset="utf-8">
 		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script src="index.js"></script>
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
-		<script src="index.js"></script>
+		<h1 id="title">Baseball Data</h1>
+		<div id="subtext" class="info">
+			Does handedness have an effect on a baseball player's performance? 
+			<br>
+			Click on a player to see more stats!
+		</div>
+		<div id="outcome" class="info">
+			On average, compared to <span class="red">right-handed</span>
+			and <span class="blue">ambidextrous</span> players,
+			<span class="green">left-handed</span> players:
+			<ul>
+				<li>have slightly better batting averages</li>
+				<li>hit more homeruns</li>
+			</ul>
+			At a 90% confidence level, these differences are statistically significant.
+		</div>
 		<script>d3.csv("baseball_data2.csv", draw);</script>
 	</body>
 </html>
