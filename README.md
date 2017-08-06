@@ -17,7 +17,9 @@ We decided to use a large scatter plot to allow the user to see trends in the da
 After some feedback, we also added a ‘summary statistics’ portion for quick explanatory visualization while retaining exploratory functionality with the whole dataset. Bar charts were used to allow quick comparison. The visual encoding of handedness is color to be consistent with the scatter plot. No axes were used as bar width and values in the bars were sufficient to encode the data and the colors were sufficient to encode the handedness.
 # Feedback
 The visualization was updated based on collected feedback. Version 1.0 represents the visualization before the feedback and Version 2.0 represents the visualization after the feedback. 
+
 Please note, only Version 2.0 can be seen in the browser via the link: https://dominickhacnguyen.github.io/baseball-data/. Version 1.0 can be viewed by downloading it separately and viewing it locally. 
+
 Below is the feedback that was collected:
 -	Brother noticed that there were two circles that would show up green (left handed) even though the red (right handed) button was selected. Refer to *Version1.0_Issue.jpg*.
 > - To resolve this, we went back to the csv file and found out that there were duplicates in the name field. 
