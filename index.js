@@ -28,7 +28,7 @@ function convertCategory(category) {
 // function to draw scatter plot and labels
 function draw(data) {
 	"use strict";
-	var margin = {top: 20, right: 20, bottom: 20, left: 20};
+	var margin = {top: 20, right: 20, bottom: 20, left: 40};
 	var buffer = 50;
 	var chartWidth = window.innerWidth;
 	var chartHeight = window.innerHeight;
@@ -55,11 +55,11 @@ function draw(data) {
 	color.range(colors);
 
 	// add the graph canvas to the body of the webpage
-	var svg = d3.select("body").append("svg");
-	svg.attr("width", width + margin.left + margin.right)
+	var svg = d3.select("body").append("svg")
+		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
-		.append("g");
-//		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	// add the tooltip area to the webpage
 	var tooltip = d3.select("body").append("div");

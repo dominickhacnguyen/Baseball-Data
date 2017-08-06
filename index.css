@@ -11,12 +11,12 @@ body {
 	font-weight: bold;
 	position: absolute;
 	top: 5vh;
-	left: 5vw;
+	left: 7vw;
 }
 svg {
 	position: absolute;
 	top: 5vh;
-	left: 2vw;
+	left: 1vw;
 }
 .info {
 	position: absolute;
@@ -25,7 +25,7 @@ svg {
 }
 #subtext {
 	top: 12vh;
-	left: 5vw;
+	left: 7vw;
 }
 #legendTitle {
 	position: absolute;
@@ -43,9 +43,9 @@ svg {
 	stroke: #FFFFFF;
 	shape-rendering: crispEdges;
 }
-#result {
+#outcome {
 	top: 47vh;
-	left: 5vw;
+	left: 7vw;
 	width: 40vw;
 }
 h2, h3, p {
@@ -89,7 +89,6 @@ div.hand_buttons div {
 div.hand_buttons div:hover {
 	cursor: pointer;
 }
-
 .summaryChart {
 	color: #FFFFFF;
 }
@@ -108,7 +107,7 @@ h1 {
 #battingAvgSummary {
 	position: absolute;
 	top: 22vh;
-	left: 6vw;
+	left: 8vw;
 }
 #hrAvgSummary {
 	position: absolute;
