@@ -18,7 +18,7 @@ After some feedback, we also added a ‘summary statistics’ portion for quick 
 # Feedback
 The visualization was updated based on collected feedback. Version 1.0 represents the visualization before the feedback and Version 2.0 represents the visualization after the feedback. 
 
-Please note, only Version 2.0 can be seen in the browser via the link: https://dominickhacnguyen.github.io/baseball-data/. Version 1.0 can be viewed by downloading it separately and viewing it locally. 
+Please note, only Version 2.0 can be seen in the browser via the link: https://domwon.github.io/Baseball-Data/. Version 1.0 can be viewed by downloading it separately and viewing it locally. 
 
 Below is the feedback that was collected:
 -	Brother noticed that there were two circles that would show up green (left handed) even though the red (right handed) button was selected. Refer to *Version1.0_Issue.jpg*.
